@@ -1,0 +1,42 @@
+<div class="container">
+  <div class='directory'>
+
+    <div class='clearfix'>
+      {{current-period-chooser current_period=current_period}}
+      {{text-field value=nameInput placeholderKey="current_directory.filter_name" class="filter-name"}}
+    </div>
+
+    {{#conditional-loading-spinner condition=model.loading}}
+      {{#if model.length}}
+        <div class='total-rows'>{{i18n "current_directory.total_rows" count=model.totalRows}}</div>
+
+        <table>
+          <thead>
+            <th>&nbsp;</th>
+            {{current-directory-toggle field="topic_count" order=order asc=asc}}
+            {{current-directory-toggle field="post_count" order=order asc=asc}}
+            {{current-directory-toggle field="total_participation" order=order asc=asc}}
+          </thead>
+          <tbody>
+            {{#each ic in model itemController="current-directory-item"}}
+              <tr class="{{if ic.me 'me'}}">
+                {{#with ic.model as |it|}}
+                  <td>{{user-small user=it.user}}</td>
+                  <td>{{number it.topic_count}}</td>
+                  <td>{{number it.post_count}}</td>
+                  <td>{{number it.total_participation}}</td>
+                {{/with}}
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+
+        {{conditional-loading-spinner condition=model.loadingMore}}
+      {{else}}
+        <div class='clearfix'></div>
+        <p>{{i18n "current_directory.no_results"}}</p>
+      {{/if}}
+    {{/conditional-loading-spinner}}
+
+  </div>
+</div>

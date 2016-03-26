@@ -1,0 +1,119 @@
+# encoding: utf-8
+#
+# This file contains content for the client portion of Discourse, sent out
+# to the Javascript app.
+#
+# To work with us on translations, see: https://www.transifex.com/projects/p/discourse-org/
+#
+# This is a "source" file, which is used by Transifex to get translations for other languages.
+# After this file is changed, it needs to be pushed by a maintainer to Transifex:
+#
+#   tx push -s
+#
+# Read more here: https://meta.discourse.org/t/contribute-a-translation-to-discourse/14882
+#
+# To validate this YAML file after you change it, please paste it into http://yamllint.com/
+
+en:
+  js:
+    current_directory:
+      filter_name: "filter by username"
+      title: "User Post Count"
+      likes_given: "Given"
+      likes_received: "Received"
+      topics_entered: "Entered"
+      topics_entered_long: "Topics Entered"
+      time_read: "Time Read"
+      topic_count: "Topics"
+      topic_count_long: "Topics Created"
+      post_count: "Replies"
+      post_count_long: "Replies Posted"
+      no_results: "No results were found."
+      days_visited: "Visits"
+      days_visited_long: "Days Visited"
+      posts_read: "Read"
+      posts_read_long: "Posts Read"
+      total_participation: "Total Post Count"
+      total_rows:
+        one: "1 user"
+        other: "%{count} users"
+
+    filters:
+      with_topics: "%{filter} topics"
+      with_category: "%{filter} %{category} topics"
+      latest:
+        title: "Latest"
+        title_with_count:
+          one: "Latest (1)"
+          other: "Latest ({{count}})"
+        help: "topics with recent posts"
+      hot:
+        title: "Hot"
+        help: "a selection of the hottest topics"
+      read:
+        title: "Read"
+        help: "topics you've read, in the order that you last read them"
+      search:
+        title: "Search"
+        help: "search all topics"
+      categories:
+        title: "Categories"
+        title_in: "Category - {{categoryName}}"
+        help: "all topics grouped by category"
+      unread:
+        title: "Unread"
+        title_with_count:
+          one: "Unread (1)"
+          other: "Unread ({{count}})"
+        help: "topics you are currently watching or tracking with unread posts"
+        lower_title_with_count:
+          one: "1 unread"
+          other: "{{count}} unread"
+      new:
+        lower_title_with_count:
+          one: "1 new"
+          other: "{{count}} new"
+        lower_title: "new"
+        title: "New"
+        title_with_count:
+          one: "New (1)"
+          other: "New ({{count}})"
+        help: "topics created in the last few days"
+      posted:
+        title: "My Posts"
+        help: "topics you have posted in"
+      bookmarks:
+        title: "Bookmarks"
+        help: "topics you have bookmarked"
+      category:
+        title: "{{categoryName}}"
+        title_with_count:
+          one: "{{categoryName}} (1)"
+          other: "{{categoryName}} ({{count}})"
+        help: "latest topics in the {{categoryName}} category"
+      top:
+        title: "Top"
+        help: "the most active topics in the last year, month, week or day"
+        all:
+          title: "All Time"
+        yearly:
+          title: "Yearly"
+        quarterly:
+          title: "Quarterly"
+        monthly:
+          title: "Monthly"
+        weekly:
+          title: "Weekly"
+        daily:
+          title: "Daily"
+        all_time: "All Time"
+        this_year: "Year"
+        this_quarter: "Quarter"
+        this_month: "Month"
+        this_week: "Week"
+        today: "Today"
+        other_periods: "see top"
+        first_quarter: "First Quarter"
+        second_quarter: "Second Quarter"
+        third_quarter: "Third Quarter"
+        fourth_quarter: "Fourth Quarter"

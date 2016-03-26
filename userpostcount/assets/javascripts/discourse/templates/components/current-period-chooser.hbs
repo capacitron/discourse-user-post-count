@@ -1,0 +1,11 @@
+<h2>{{current-period-title current_period showDateRange=true}}</h2>
+<button>{{fa-icon "caret-down"}}</button>
+
+<div id='period-popup' {{bind-attr class="showPeriods::hidden :period-popup"}}>
+  <ul>
+    {{#each p in site.current_periods}}
+      <li><a href {{action "changeCurrentPeriod" p}}>{{current-period-title p showDateRange=true}}</a></li>
+    {{/each}}
+  </ul>
+</div>
+<div class='clearfix'></div>
