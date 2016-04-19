@@ -21,7 +21,7 @@
             {{#each ic in model itemController="current-directory-item"}}
               <tr class="{{if ic.me 'me'}}">
                 {{#with ic.model as |it|}}
-                  <td>{{user-small user=it.user}}</td>
+                  <td>{{user-info user=it.user}}</td>
                   <td>{{number it.topic_count}}</td>
                   <td>{{number it.post_count}}</td>
                   <td>{{number it.total_participation}}</td>
