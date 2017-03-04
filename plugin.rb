@@ -5,9 +5,9 @@
 
 after_initialize do
 
-  register_asset "javascripts/discourse/app_route_addition.js.es6"
+  register_asset "javascripts/discourse/userpostcount-route-map.js.es6"
 
-  Discourse::Application.routes.prepend do 
+  Discourse::Application.routes.prepend do
     resources :current_directory_items
     get "userpostcount" => 'users#index'
   end
@@ -182,7 +182,7 @@ after_initialize do
         dir = params[:asc] ? 'ASC' : 'DESC'
         result = result.order("current_directory_items.#{order} #{dir}")
       end
-      
+
       page = params[:page].to_i
 
       user_ids = nil

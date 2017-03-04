@@ -1,3 +1,5 @@
+import { htmlHelper } from 'discourse-common/lib/helpers';
+
 const CURRENT_TITLE_SUBS = {
   first_quarterly: 'first_quarter',
   second_quarterly: 'second_quarter',
@@ -5,7 +7,7 @@ const CURRENT_TITLE_SUBS = {
   fourth_quarterly: 'fourth_quarter',
 };
 
-export default Ember.Handlebars.makeBoundHelper(function (current_period, options) {
+export default htmlHelper((current_period, options) => {
   const title = I18n.t('filters.top.' + (CURRENT_TITLE_SUBS[current_period] || 'first_quarter'));
   if (options.hash.showDateRange) {
     var dateString = "";
@@ -23,8 +25,9 @@ export default Ember.Handlebars.makeBoundHelper(function (current_period, option
         dateString = moment().startOf('year').add(9, 'month').startOf('month').format(I18n.t('dates.long_no_year_no_time')) + " - " + moment().endOf('year').format(I18n.t('dates.long_no_year_no_time'));
         break;
     }
-    return new Handlebars.SafeString(title + " <span class='top-date-string'>" + dateString + "</span>");
+
+    return `${title} <span class='top-date-string'>${dateString}</span>`;
   } else {
-    return new Handlebars.SafeString(title);
+    return title;
   }
 });
